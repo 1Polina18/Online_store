@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редактировать данные клиентов</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            padding: 20px 0;
+        }
+
+        form {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0069d9;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Редактировать данные клиентов</h1>
+    <form action="{{ url_for('update2', id=client[0]) }}" method="post">
+        <label for="full_name">Имя:</label>
+        <input type="text" id="full_name" name="full_name" value="{{ client[1] }}" required><br>
+
+        <label for="address">Адрес:</label>
+        <input type="text" id="address" name="address" value="{{ client[2] }}"><br>
+
+        <label for="telephone">Телефон:</label>
+        <input type="telephone" id="telephone" name="telephone" value="{{ client[3] }}" required><br>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" value="{{ client[4] }}"><br>
+
+        <label for="order_history">История заказов:</label>
+        <input type="text" id="order_history" name="order_history" value="{{ client[5] }}"><br>
+
+        <label for="login">Логин:</label>
+        <input type="text" id="login" name="login" value="{{ client[6] }}" required><br>
+
+        <label for="password">Пароль:</label>
+        <input type="text" id="password" name="password" value="{{ client[7] }}" required><br>
+
+        <input type="submit" value="Обновить">
+    </form>
+    <a href="{{ url_for('clients') }}">Назад к данным клиентов</a>
+</body>
+</html>
