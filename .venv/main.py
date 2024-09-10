@@ -53,7 +53,7 @@ def get_item(item_id):
     if item:
         return render_template('item.html', item=item)
     else:
-        return "Товар не найден", 404
+        return render_template('not_found.html'), 404
 
 # Create
 @app.route('/create', methods=['GET', 'POST'])
@@ -193,7 +193,7 @@ def get_item2(item_id):
     if item:
         return render_template('item2.html', item=item)
     else:
-        return "Клиент не найден", 404
+        return render_template('not_found2.html'), 404
 
 @app.route('/create2', methods=['GET', 'POST'])
 def create2():
