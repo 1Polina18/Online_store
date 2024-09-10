@@ -83,17 +83,17 @@
         </thead>
         <tbody>
             <tr>
-                <td>{{ item[0] }}</td>
-                <td>{{ item[1] }}</td>
-                <td>{{ item[2] }}</td>
-                <td>{{ item[3] }}</td>
-                <td>{{ item[4] }}</td>
-                <td>{{ item[5] }}</td>
-                <td>{{ item[6] }}</td>
-                <td>{{ item[7] }}</td>
+                <td>{{ item2[0] }}</td>
+                <td>{{ item2[1] }}</td>
+                <td>{{ item2[2] }}</td>
+                <td>{{ item2[3] }}</td>
+                <td>{{ item2[4] }}</td>
+                <td>{{ item2[5] }}</td>
+                <td>{{ item2[6] }}</td>
+                <td>{{ item2[7] }}</td>
                 <td>
-                    <a href="{{ url_for('update2', id=item[0]) }}">Редактировать</a>
-                    <form action="{{ url_for('delete2', id=item[0]) }}" method="post" style="display:inline;">
+                    <a href="{{ url_for('update2', id=item2[0]) }}">Редактировать</a>
+                    <form action="{{ url_for('delete2', id=item2[0]) }}" method="post" style="display:inline;">
                         <input type="submit" value="Удалить">
                     </form>
                 </td>

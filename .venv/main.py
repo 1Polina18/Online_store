@@ -181,19 +181,22 @@ def clients():
     dbMySql.close()
     return render_template('clients.html', clients=clients)
 
-@app.route("/clients/<int:item_id>")
-def get_item2(item_id):
+
+@app.route("/clients/<int:client_id>")
+def get_client(client_id):
     dbMySql = get_db_connection()
     cursorMySql = dbMySql.cursor()
     # Используем параметризованный запрос для извлечения клиента по ID
-    query = "SELECT * FROM Goods WHERE id = %s"
-    cursorMySql.execute(query, (item_id,))
-    item = cursorMySql.fetchone()
+    query = "SELECT * FROM Clients WHERE id = %s"
+    cursorMySql.execute(query, (client_id,))
+    item2 = cursorMySql.fetchone()
     dbMySql.close()
-    if item:
-        return render_template('item2.html', item=item)
+
+    if item2:
+        return render_template('item2.html', item2=item2)
     else:
         return render_template('not_found2.html'), 404
+
 
 @app.route('/create2', methods=['GET', 'POST'])
 def create2():
