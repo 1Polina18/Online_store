@@ -36,7 +36,7 @@ class TestMainIntegration(unittest.TestCase):
         self.db.commit()
 
         # Обновление товара
-        update(1, name='Обновленный товар', description='Обновленное описание', price=200, availability_in_stock='В наличии', quantity_in_stock=7)
+        update(12, name='Обновленный товар', description='Обновленное описание', price=200, availability_in_stock='В наличии', quantity_in_stock=7)
 
         # Проверка обновления
         self.cursor.execute("SELECT * FROM Goods WHERE ID=1")
@@ -51,7 +51,7 @@ class TestMainIntegration(unittest.TestCase):
         self.db.commit()
 
         # Удаление товара
-        delete(1)
+        delete(11)
 
         # Проверка удаления
         self.cursor.execute("SELECT * FROM Goods WHERE ID=1")
@@ -76,7 +76,7 @@ class TestMainIntegration(unittest.TestCase):
         self.db.commit()
 
         # Обновление клиента
-        update(1, full_name='Обновленный клиент', address='Обновленный адрес', telephone='+79999999999',
+        update(9, full_name='Обновленный клиент', address='Обновленный адрес', telephone='+79999999999',
                email='new@example.com', order_history='Заказ 2', login='new', password='newpassword')
 
         # Проверка обновления
@@ -92,7 +92,7 @@ class TestMainIntegration(unittest.TestCase):
         self.db.commit()
 
         # Удаление клиента
-        delete(1)
+        delete(8)
 
         # Проверка удаления
         self.cursor.execute("SELECT * FROM Clients WHERE ID=1")
